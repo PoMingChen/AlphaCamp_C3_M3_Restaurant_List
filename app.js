@@ -1,7 +1,13 @@
 const express = require('express');
+const path = require('path');
+const { engine } = require('express-handlebars');
 const app = express();
 const port = 3000;
 const restaurantList = require('./public/jsons/restaurant.json').results;
+
+app.engine('.hbs', engine({ extname: '.hbs'}));
+app.set('view engine', '.hbs');
+app.set('views', './views');
 
 app.use(express.static('public'));
 
@@ -12,7 +18,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurant', (req, res) => {
-  res.send('Hello the initiation of restaurant list!')
+  // res.send('Hello the initiation of restaurant list!')
+  res.render('index', { restaurant: restaurantList})
 })
 
 // The route '/restaurant/:id' captures the id parameter from the URL
