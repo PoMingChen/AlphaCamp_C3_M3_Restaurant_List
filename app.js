@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const restaurantList = require('./public/jsons/restaurant.json').results;
 
-
+app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
