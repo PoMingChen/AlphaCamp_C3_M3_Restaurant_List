@@ -14,16 +14,16 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   // res.send('Hello the initiation of restaurant list!')
-  res.redirect('/restaurant')
+  res.redirect('/restaurants')
 })
 
-app.get('/restaurant', (req, res) => {
+app.get('/restaurants', (req, res) => {
   // res.send('Hello the initiation of restaurant list!')
-  res.render('index', { restaurant: restaurantList})
+  res.render('index', { restaurants: restaurantList})
 })
 
 // The route '/restaurant/:id' captures the id parameter from the URL
-app.get('/restaurant/:id', (req, res) => {
+app.get('/restaurants/:id', (req, res) => {
 
   // The req.params.id is used to access the id parameter within the route handler.
   id = req.params.id
