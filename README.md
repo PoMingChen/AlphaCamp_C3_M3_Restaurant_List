@@ -18,10 +18,6 @@
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.0/install.sh | bash
 ```
 
-```
-$ command -v nvm
-```
-
 2. 使用 Node Version Manager (nvm) 安裝 node.js 並使用指定版本(`node.js @v18.15.0`)
 
 ```
@@ -40,7 +36,7 @@ node -v
 
 ### Installing
 
-1. 將本專案從 GitHub Clone 到自己的本機
+1. 將本專案從 GitHub Clone 到自己的本機，並切換到專案資料夾
 
 ```
 https://github.com/PoMingChen/AlphaCamp_C3_M3_Restaurant_List.git
@@ -53,10 +49,12 @@ npm i express@4.19.2
 ```
 
 ```
-$ npm install express-handlebars
+$ npm install express-handlebars@7.0.4
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+```
+npm install -g nodemon
+```
 
 ## Running the tests
 
@@ -64,21 +62,29 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+1. 啟動伺服器，執行 app.js 檔案
+
+```
+nodemon app.js
+```
+
+2. 開啟瀏覽器，並輸入以下網址 `http://localhost:3000`
 
 ## Built With
 
-- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-- [Maven](https://maven.apache.org/) - Dependency Management
-- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+- [Node.js](https://nodejs.org/en)
+- [Express](https://expressjs.com)
+- [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
+- [前端網頁頁面設計 1]（https://codepen.io/alpha-camp/pen/yrLbrZ）-由 AlphaCamp 提供
+- [前端網頁頁面設計 2]（https://codepen.io/alpha-camp/pen/JVjNgG）-由 AlphaCamp 提供
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+- 無
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+- 無
 
 ## Authors
 
@@ -90,4 +96,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Acknowledgments
 
-- [AlphaCamp](https://tw.alphacamp.co/) Instructor & TA
+- [AlphaCamp](https://tw.alphacamp.co/) 導師與助教群
