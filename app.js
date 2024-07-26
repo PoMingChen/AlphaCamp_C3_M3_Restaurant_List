@@ -18,8 +18,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
-  // res.send('Hello the initiation of restaurant list!')
-  res.render('index', { restaurants: restaurantList})
+
+  const keyword = req.query.keyword?.trim()
+  const matchedRestaurants = keyword ? restaurantList.filter(restaurant => {
+    return restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.category.toLowerCase().includes(keyword.toLowerCase())
+  }) : restaurantList
+
+  res.render('index', { restaurants: matchedRestaurants, keyword: keyword })
 })
 
 // The route '/restaurant/:id' captures the id parameter from the URL
@@ -29,7 +34,7 @@ app.get('/restaurants/:id', (req, res) => {
   id = req.params.id
   // res.send(`The detail of restaurant ${id}`)
   restaurant = restaurantList.find(restaurant => restaurant.id.toString() === id)
-  res.render('detail', { restaurant, id})
+  res.render('detail', {restaurant, id})
 })
 
 
