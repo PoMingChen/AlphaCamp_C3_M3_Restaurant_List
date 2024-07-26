@@ -13,7 +13,6 @@ app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-  // res.send('Hello the initiation of restaurant list!')
   res.redirect('/restaurants')
 })
 
@@ -32,7 +31,6 @@ app.get('/restaurants/:id', (req, res) => {
 
   // The req.params.id is used to access the id parameter within the route handler.
   id = req.params.id
-  // res.send(`The detail of restaurant ${id}`)
   restaurant = restaurantList.find(restaurant => restaurant.id.toString() === id)
   res.render('detail', {restaurant, id})
 })
