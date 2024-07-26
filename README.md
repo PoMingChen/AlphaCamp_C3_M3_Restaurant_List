@@ -4,7 +4,9 @@
 
 主要功能有：餐廳清單的瀏覽、餐廳細部介紹，以及透過搜尋功能（餐廳名稱或類別），來找到符合條件的餐廳。
 
-- [ ]功能照片待捕上
+- [Feature_Listing](./public/images/Feature_Listing.png)
+- [Feature_Reading](./public/images/Feature_Reading.png)
+- [Feature_Searching](./public/images/Feature_Searching.png)
 
 ## Getting Started
 
