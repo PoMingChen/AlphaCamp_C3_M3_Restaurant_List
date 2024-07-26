@@ -27,7 +27,9 @@ app.get('/restaurants/:id', (req, res) => {
 
   // The req.params.id is used to access the id parameter within the route handler.
   id = req.params.id
-  res.send(`The detail of restaurant ${id}`)
+  // res.send(`The detail of restaurant ${id}`)
+  restaurant = restaurantList.find(restaurant => restaurant.id.toString() === id)
+  res.render('detail', { restaurant, id})
 })
 
 
